@@ -5,7 +5,7 @@ import {
     Image,
     Stack,
     Text,
-    useBreakpointValue, useColorModeValue, StackDivider, Icon, Container, Box
+    useBreakpointValue, useColorModeValue, StackDivider, Icon, Container, Box, Divider, StylesProvider
   } from '@chakra-ui/react';
   import {
     IoLaptopOutline,
@@ -13,7 +13,7 @@ import {
     IoServerOutline,
   } from 'react-icons/io5';
   import { ReactElement } from 'react';
-  
+  import styles from '../styles/Home.module.css';
   interface FeatureProps {
     text: string;
     iconBg: string;
@@ -40,7 +40,7 @@ import {
     return (
         <Container maxW={'7xl'}>
         <Stack
-            bgColor={'white'}
+          //bgColor={'#FFF0F5'}
           align={'center'}
           spacing={{ base: 8, md: 12 }}
           py={{ base: 20, md: 28 }}
@@ -58,12 +58,12 @@ import {
                 _after={{
                   content: "''",
                   width: 'full',
-                  height: '30%',
+                  height: '15%',
                   position: 'absolute',
-                  bottom: 1,
+                  bottom: 0,
                   left: 0,
                   bg: 'red.400',
-                  zIndex: -1,
+                  zIndex: 0,
                 }}>
                 Sobre Mim
               </Text>
@@ -72,12 +72,13 @@ import {
                 Desenvolvedor Full Stack
               </Text>
             </Heading>
-            <Text color={'gray.500'}>
-                    Adoro Programar desde a adolêscencia, estudei Sistemas de Informação na UFMS, Fiz estágios e já desenvolvi diversos projetos Freelancers. Meu foco atual é nos Frameworks
-                    do Javascript como o React e React Native para o Front-End e Node, Express para o Back-End.
+            <Text color={'black'}>
+                    Desde a adolescência me dedico para a área de tecnologia, sou formado em Sistemas de Informação pela Universidade Federal de Mato Grosso do Sul (UFMS), Fiz estágios e já desenvolvi diversos projetos Freelancers. Meu foco atual é nos Frameworks
+                    do Javascript como o React, React Native para o Front-End e Node, Express para o Back-End.
                 </Text>
                 <Text>Curiosidade: Esse site foi Desenvolvido com <b>Next.Js</b> e <b>React.Js</b></Text>
             <Heading>Atuo nas seguintes áreas: </Heading>
+           
             <Feature
               icon={
                 <Icon as={IoLaptopOutline} color={'yellow.500'} w={5} h={5} />
@@ -85,11 +86,14 @@ import {
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
               text={'Desenvolvimento Web'}
             />
+              <hr></hr> 
+            
             <Feature
               icon={<Icon as={IoPhonePortraitOutline} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
               text={'Desenvolvimento Mobile'}
             />
+            <hr></hr>
             <Feature
               icon={
                 <Icon as={IoServerOutline} color={'red.500'} w={5} h={5} />

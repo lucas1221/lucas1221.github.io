@@ -6,8 +6,9 @@ import {
   Flex,
   Text,
   Heading,
-  SimpleGrid,
+  SimpleGrid, Icon,
 } from '@chakra-ui/react';
+import {FaReact, FaAndroid, FaApple, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaJava, FaGit, FaGithub, } from 'react-icons/fa';
 
 export default function Hero3() {
   return (
@@ -16,7 +17,7 @@ export default function Hero3() {
         flex={1}
         zIndex={0}
         display={{ base: 'none', lg: 'flex' }}
-        backgroundImage="url('/templates/stats-grid-with-image.png')"
+        backgroundImage="./andras-vas-Bd7gNnWJBkU-unsplash.jpg"
         backgroundSize={'cover'}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
@@ -38,26 +39,25 @@ export default function Hero3() {
             justify={{ lg: 'center' }}
             py={{ base: 4, md: 20, xl: 60 }}>
             <Box mb={{ base: 8, md: 20 }}>
-              <Text
-                fontFamily={'heading'}
-                fontWeight={700}
-                textTransform={'uppercase'}
-                mb={3}
-                fontSize={'xl'}
-                color={'gray.500'}>
-                Technology
-              </Text>
               <Heading
                 color={'white'}
                 mb={5}
                 fontSize={{ base: '3xl', md: '5xl' }}>
-                21st century agriculture
+                Habilidades e Conhecimentos
               </Heading>
-              <Text fontSize={'xl'} color={'gray.400'}>
-                The NewLife™ technology allows you to monitor your crops and get
-                complete insights at real time. The proprietary
-                software/hardware ecosystem prevents your plants from getting
-                neglected.
+                <Icon as={FaReact} w={10} h={10}/>
+                <Icon as={FaAndroid} w={10} h={10}/>
+                <Icon as={FaApple} w={10} h={10}/>
+                <Icon as={FaNodeJs} w={10} h={10}/>
+                <Icon as={FaPython} w={10} h={10}/>
+                <Icon as={FaHtml5} w={10} h={10}/>
+                <Icon as={FaCss3Alt} w={10} h={10}/>
+                <Icon as={FaJava} w={10} h={10}/>
+                <Icon as={FaGit} w={10} h={10}/>
+                <Icon as={FaGithub} w={10} h={10}/>
+
+              <Text fontSize={'xl'} color={'gray.400'} marginTop={10}>
+                Desenvolvedor de Software especializado nos mais modernos Frameworks disponíveis no mercado
               </Text>
             </Box>
 
@@ -93,39 +93,39 @@ const StatsText = ({ children }: { children: ReactNode }) => (
 
 const stats = [
   {
-    title: '10+',
+    
+    title: 'React (Web e Mobile)',
     content: (
       <>
-        <StatsText>Software modules</StatsText> for detailed monitoring and
-        real-time analytics
+        <StatsText>React.js, React Native, Next.Js, Hooks, Context API, Axios</StatsText> para o Desenvolvimento de Websites e aplicativos para Android e iOS
+      </>
+    ),
+    
+  },
+  {
+    title: 'Back-End',
+    content: (
+      <>
+        <StatsText>Node.Js, Express.Js, Python, MySQL, PostgreSQL, MariaDB, SequelizeORM</StatsText> para criar APIs velozes e modernas
       </>
     ),
   },
   {
-    title: '24/7',
+    title: 'Java',
     content: (
       <>
-        <StatsText>Analytics</StatsText> enabled right in your dashboard without
-        history limitations
+        <StatsText>Spring, Hibernate</StatsText> para impulsionar diversos tipos de aplicativos Web, Mobile e Desktop
       </>
     ),
   },
   {
-    title: '13%',
+    title: 'Suporte Técnico',
     content: (
       <>
-        <StatsText>Farms</StatsText> in North America has chosen NewLife™ as
-        their management solution
+        <StatsText>GSuite, Office, Hardware, Photoshop</StatsText> diversas ferramentas para dar Suporte Técnico aos usuários, além de UI/UX Design
       </>
     ),
   },
-  {
-    title: '250M+',
-    content: (
-      <>
-        <StatsText>Plants</StatsText> currently connected and monitored by the
-        NewLife™ software
-      </>
-    ),
-  },
+
+  
 ];

@@ -81,7 +81,7 @@ import {
                       fontSize="3xl"
                       icon={<MdEmail />}
                       _hover={{
-                        bg: 'blue.500',
+                        bg: 'black',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       onClick={onCopy}
@@ -97,7 +97,7 @@ import {
                       fontSize="3xl"
                       icon={<BsGithub />}
                       _hover={{
-                        bg: 'blue.500',
+                        bg: 'black',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       isRound
@@ -111,7 +111,7 @@ import {
                       size="lg"
                       icon={<BsInstagram size="28px" />}
                       _hover={{
-                        bg: 'blue.500',
+                        bg: 'black',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       isRound
@@ -125,7 +125,7 @@ import {
                       size="lg"
                       icon={<BsLinkedin size="28px" />}
                       _hover={{
-                        bg: 'blue.500',
+                        bg: 'black',
                         color: useColorModeValue('white', 'gray.700'),
                       }}
                       isRound

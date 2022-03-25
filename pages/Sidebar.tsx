@@ -12,7 +12,7 @@ import {
   Text,
   useDisclosure,
   BoxProps,
-  FlexProps,
+  FlexProps, Divider,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -59,7 +59,9 @@ export default function Sidebar({ children }: { children: ReactNode }) {
         onOverlayClick={onClose}
         size="full">
         <DrawerContent>
+        
           <SidebarContent onClose={onClose} />
+     
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
@@ -80,17 +82,21 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     <Box
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
-      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
+      borderRightColor={useColorModeValue('black.200', 'gray.700')}
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
       {...rest}>
+       
       <Flex h="md" alignItems="center" mx="12" justifyContent="space-between">
+        
         <Text fontSize="3xl" fontFamily="monospace" fontWeight={'bold'}>
         Lucas Gonzalez de Queiroz
         </Text>
+        
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
+      <p style={{background: 'black'}}><Divider orientation='horizontal' /></p>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
           {link.name}
@@ -115,7 +121,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: 'purple.700',
+          bg: 'purple.500',
           color: 'white',
         }}
         {...rest}>
