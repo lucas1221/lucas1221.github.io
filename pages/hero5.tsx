@@ -12,6 +12,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
+import Link from 'next/link'
 
 // Settings for the slider
 const settings = {
@@ -44,21 +45,21 @@ export default function Hero5() {
       text:
         "Empresa: ",
       image:
-        'https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        './Optimized-scott-graham-5fNmWej4tAA-unsplash.jpg',
     },
     {
       title: 'Projeto 2',
       text:
         "Empresa: ",
       image:
-        'https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80',
+        './Optimized-sean-pollock-PhYq704ffdA-unsplash.jpg',
     },
     {
       title: 'Projeto 3',
       text:
         "Empresa 3:",
       image:
-        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        './Optimized-emile-perron-xrVDYZRGdw4-unsplash.jpg',
     },
   ];
 
@@ -124,10 +125,10 @@ export default function Hero5() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading fontSize={{ base: '5xl', md: '3xl', lg: '5xl' }} bgColor={'black'} color={'white'}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                <Text fontSize={{ base: 'md', lg: 'lg' }} color="white" bgColor={'black'}>
                   {card.text}
                 </Text>
               </Stack>

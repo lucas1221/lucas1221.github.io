@@ -7,10 +7,9 @@ import {
     useBreakpointValue, Heading,
   } from '@chakra-ui/react';
 import React from 'react';
-
+import Typical from 'react-typical'
 //import './styles.css';
 import Lottie from 'react-lottie';
-
 import backend from '../assets/teste.json';
 import backend2 from '../assets/teste2.json';
 import backend3 from '../assets/teste3.json';
@@ -40,7 +39,14 @@ import backend3 from '../assets/teste3.json';
           preserveAspectRatio: "xMidYMid slice"
         }
       };
+      /*
+        <Text as={'span'} color={'red.400'}>
+              Desenvolvedor Full Stack
+            </Text>
+      */
+     
     return (
+      
       <Flex
         w={'100%'}
         h={'100vh'}
@@ -56,7 +62,8 @@ import backend3 from '../assets/teste3.json';
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+            fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
+            >
             <Text
               as={'span'}
               position={'relative'}
@@ -76,7 +83,11 @@ import backend3 from '../assets/teste3.json';
             </Text>
             <br />
             <Text as={'span'} color={'red.400'}>
-              Desenvolvedor Full Stack
+            <Typical
+              steps={['Desenvolvedor Full Stack', 2000, 'Desenvolvedor Mobile', 2000, 'Desenvolvedor Web', 2000, 'Desenvolvimento Back-End', 2000]}
+              loop={Infinity}
+              style={{backgroundColor: 'red !important', Color: 'red'}}
+            />
             </Text>
           </Heading>
             <Stack direction={'row'}>
@@ -95,5 +106,6 @@ import backend3 from '../assets/teste3.json';
           </Stack>
         </VStack>
       </Flex>
+     
     );
   }

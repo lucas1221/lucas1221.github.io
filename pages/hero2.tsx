@@ -14,6 +14,7 @@ import {
   } from 'react-icons/io5';
   import { ReactElement } from 'react';
   import styles from '../styles/Home.module.css';
+  import Link from 'next/link'
   interface FeatureProps {
     text: string;
     iconBg: string;

@@ -3,7 +3,6 @@ import {
     chakra,
     Container,
     Heading,
-    Link,
     Stack,
     Text,
     useColorModeValue,
@@ -11,7 +10,9 @@ import {
   } from '@chakra-ui/react';
   import { FaGithub, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { ReactNode } from 'react';
-  
+  import Hero1 from './hero1'
+  import Link from "next/link"
+
   const Logo = (props: any) => {
     return (
       <Heading>Lucas Gonzalez de Queiroz</Heading>
@@ -63,12 +64,12 @@ import {
           align={'center'}>
           <Logo />
           <Stack direction={'row'} spacing={6}>
-            <Link href={'#'}>Início</Link>
-            <Link href={'#'}>Sobre Mim</Link>
-            <Link href={'#'}>Habilidades</Link>
-            <Link href={'#'}>Educação</Link>
-            <Link href={'#'}>Projetos</Link>
-            <Link href={'#'}>Contato</Link>
+            <Link href={'/hero1'}>Início</Link>
+            <Link href={'/hero2'}>Sobre Mim</Link>
+            <Link href={'/hero3'}>Habilidades</Link>
+            <Link href={'/hero4'}>Educação</Link>
+            <Link href={'/hero5'}>Projetos</Link>
+            <Link href={'/contact'}>Contato</Link>
           </Stack>
         </Container>
   

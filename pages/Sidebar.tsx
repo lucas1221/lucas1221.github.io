@@ -26,6 +26,7 @@ import {AiOutlineMail} from 'react-icons/ai';
 import {GrDocumentPdf} from 'react-icons/gr';
 import { IconType } from 'react-icons';
 import { ReactText } from 'react';
+import NextLink from "next/link"
 
 interface LinkItemProps {
   name: string;
@@ -41,11 +42,11 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Baixar Currículo', icon: GrDocumentPdf },
 ];
 
-export default function Sidebar({ children }: { children: ReactNode }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
+export default function SimpleSidebar({ children }: { children: ReactNode }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+    <Box minH="100vh">
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
@@ -59,14 +60,12 @@ export default function Sidebar({ children }: { children: ReactNode }) {
         onOverlayClick={onClose}
         size="full">
         <DrawerContent>
-        
           <SidebarContent onClose={onClose} />
-     
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
       <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 0 }} p="0">
+      <Box ml={{ base: 0, md: 60 }} p="0">
         {children}
       </Box>
     </Box>
@@ -82,21 +81,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     <Box
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
-      borderRightColor={useColorModeValue('black.200', 'gray.700')}
+      borderRightColor={useColorModeValue('black', 'black')}
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
       {...rest}>
-       
-      <Flex h="md" alignItems="center" mx="12" justifyContent="space-between">
-        
-        <Text fontSize="3xl" fontFamily="monospace" fontWeight={'bold'}>
-        Lucas Gonzalez de Queiroz
+      <Flex h="auto" alignItems="center" mx="7" justifyContent="center">
+        <Text fontSize="4xl" fontFamily="monospace" fontWeight="bold" marginTop={10}>
+          Lucas Gonzalez de Queiroz
         </Text>
-        
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      <p style={{background: 'black'}}><Divider orientation='horizontal' /></p>
+      <p style={{background: 'black', marginTop: 50, marginBottom: 20}}><Divider orientation='horizontal' /></p>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
           {link.name}
@@ -112,7 +108,8 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <NextLink href='https://drive.google.com/file/d/1fY2MtyksEDcapjQrmfQHo6fyp1KV6jt2/view?usp=sharing' passHref>
+    <Link style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -121,14 +118,14 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: 'purple.500',
+          bg: 'red.500',
           color: 'white',
         }}
         {...rest}>
         {icon && (
           <Icon
             mr="4"
-            fontSize="16"
+            fontSize="30"
             _groupHover={{
               color: 'white',
             }}
@@ -138,6 +135,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         {children}
       </Flex>
     </Link>
+    </NextLink>
   );
 };
 
@@ -153,7 +151,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       alignItems="center"
       bg={useColorModeValue('white', 'gray.900')}
       borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+      borderBottomColor={useColorModeValue('black', 'black')}
       justifyContent="flex-start"
       {...rest}>
       <IconButton

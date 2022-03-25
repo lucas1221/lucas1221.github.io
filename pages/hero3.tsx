@@ -9,6 +9,7 @@ import {
   SimpleGrid, Icon,
 } from '@chakra-ui/react';
 import {FaReact, FaAndroid, FaApple, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaJava, FaGit, FaGithub, } from 'react-icons/fa';
+import Link from 'next/link'
 
 export default function Hero3() {
   return (

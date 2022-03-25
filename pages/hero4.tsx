@@ -11,6 +11,7 @@ import {
   } from '@chakra-ui/react';
   import Lottie from 'react-lottie';
   import backend from '../assets/88009-diploma-certificate-animation-icon.json';
+  import Link from 'next/link'
   
   export default function Hero4() {
     const defaultOptions = {

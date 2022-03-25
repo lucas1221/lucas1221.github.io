@@ -20,7 +20,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      
       <Sidebar>
         <section className='Inicio'><Hero1/></section>
         <section style={{background: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,244,246,1) 100%)'}} className='Sobre'><Hero2/></section>
@@ -28,10 +27,9 @@ export default function Home() {
         <section style={{background: 'white'}} className='Education'><Hero4/></section>
         <section className='Projetos'><Hero5/></section>
         <section className='Contato'><Contact/></section>
-        <footer><Footer/></footer>
+        <footer><Footer/></footer> 
       </Sidebar>
-      
-     </main> 
+      </main>
     </div>
   )
 }
