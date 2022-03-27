@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Sidebar from './Sidebar'
 import Hero1 from './hero1'
 import Hero2 from './hero2'
