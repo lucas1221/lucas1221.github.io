@@ -125,10 +125,10 @@ export default function Hero5() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '5xl', md: '3xl', lg: '5xl' }} bgColor={'black'} color={'white'}>
+                <Heading fontSize={{ base: '5xl', md: '3xl', lg: '5xl' }}  color={'white'}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="white" bgColor={'black'}>
+                <Text fontSize={{ base: 'md', lg: 'lg' }} color="white" >
                   {card.text}
                 </Text>
               </Stack>

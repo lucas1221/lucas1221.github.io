@@ -38,7 +38,7 @@ import {
   
   export default function Contact() {
     const { hasCopied, onCopy } = useClipboard('lucasgq71@gmail.com');
-  
+
     return (
       <Flex
         bg={useColorModeValue('gray.100', 'gray.900')}
@@ -118,7 +118,7 @@ import {
                     />
                   </Link>
   
-                  <Link href="#">
+                  <Link href="https://www.linkedin.com/in/lucas-g-de-queiroz-655834214/">
                     <IconButton
                       aria-label="linkedin"
                       variant="ghost"
@@ -145,7 +145,7 @@ import {
   
                       <InputGroup>
                         <InputLeftElement><BsPerson /></InputLeftElement>
-                        <Input type="text" name="name" placeholder="Seu Nome" />
+                        <Input type="text" name="name" placeholder="Seu Nome"/>
                       </InputGroup>
                     </FormControl>
   
@@ -158,6 +158,7 @@ import {
                           type="email"
                           name="email"
                           placeholder="Seu Email"
+                         
                         />
                       </InputGroup>
                     </FormControl>
@@ -170,19 +171,24 @@ import {
                         placeholder="Digite sua Mensagem :)"
                         rows={6}
                         resize="none"
+                   
                       />
                     </FormControl>
-  
-                    <Button
-                      colorScheme="blue"
-                      bg="purple.400"
-                      color="white"
-                      _hover={{
-                        bg: 'purple.600',
-                      }}
-                      isFullWidth>
-                      Enviar Mensagem
-                    </Button>
+              
+
+                        <Button
+                          colorScheme="blue"
+                          bg="purple.400"
+                          color="white"
+                      
+                          _hover={{
+                            bg: 'purple.600',
+                          }}
+                          isFullWidth>
+                          Enviar Mensagem
+                        </Button>
+                
+                    
                   </VStack>
                 </Box>
               </Stack>

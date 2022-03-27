@@ -87,13 +87,13 @@ import {
             align={{ base: 'center', md: 'center' }}>
             <Text>Desenvolvido por: Lucas G. de Queiroz © 2022</Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Linkedin'} href={'#'}>
+              <SocialButton label={'Linkedin'} href={'https://www.linkedin.com/in/lucas-g-de-queiroz-655834214/'}>
                 <FaLinkedin />
               </SocialButton>
-              <SocialButton label={'Github'} href={'#'}>
+              <SocialButton label={'Github'} href={'https://github.com/lucas1221'}>
                 <FaGithub />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
+              <SocialButton label={'Instagram'} href={'https://www.instagram.com/lucaasgq'}>
                 <FaInstagram />
               </SocialButton>
             </Stack>

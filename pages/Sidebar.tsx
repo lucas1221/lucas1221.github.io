@@ -31,15 +31,16 @@ import NextLink from "next/link"
 interface LinkItemProps {
   name: string;
   icon: IconType;
+  page: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Início', icon: FiHome },
-  { name: 'Sobre Mim', icon: CgProfile },
-  { name: 'Habilidades', icon: RiCodeSSlashFill },
-  { name: 'Educação', icon: FaUniversity },
-  { name: 'Projetos', icon: FiStar },
-  { name: 'Contato', icon: AiOutlineMail },
-  { name: 'Baixar Currículo', icon: GrDocumentPdf },
+  { name: 'Início', icon: FiHome, page: '/hero1' },
+  { name: 'Sobre Mim', icon: CgProfile, page: '/hero2' },
+  { name: 'Habilidades', icon: RiCodeSSlashFill, page: '/hero3' },
+  { name: 'Educação', icon: FaUniversity, page: '/hero4' },
+  { name: 'Projetos', icon: FiStar, page: '/hero5' },
+  { name: 'Contato', icon: AiOutlineMail, page: '/contact' },
+  { name: 'Baixar Currículo', icon: GrDocumentPdf, page: 'https://drive.google.com/file/d/1fY2MtyksEDcapjQrmfQHo6fyp1KV6jt2/view?usp=sharing' },
 ];
 
 
@@ -87,16 +88,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}>
       <Flex h="auto" alignItems="center" mx="7" justifyContent="center">
-        <Text fontSize="4xl" fontFamily="monospace" fontWeight="bold" marginTop={10}>
+        <Text fontSize="3xl" fontFamily="monospace" fontWeight="bold" marginTop={10}>
           Lucas Gonzalez de Queiroz
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       <p style={{background: 'black', marginTop: 50, marginBottom: 20}}><Divider orientation='horizontal' /></p>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
+        <NextLink key={link.name} href={link.page} passHref>
+          <NavItem icon={link.icon}>
+            {link.name}
+          </NavItem>
+        </NextLink>
       ))}
     </Box>
   );
@@ -108,7 +111,7 @@ interface NavItemProps extends FlexProps {
 }
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
-    <NextLink href='https://drive.google.com/file/d/1fY2MtyksEDcapjQrmfQHo6fyp1KV6jt2/view?usp=sharing' passHref>
+    
     <Link style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
@@ -125,7 +128,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         {icon && (
           <Icon
             mr="4"
-            fontSize="30"
+            fontSize="20"
             _groupHover={{
               color: 'white',
             }}
@@ -135,7 +138,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         {children}
       </Flex>
     </Link>
-    </NextLink>
+    
   );
 };
 

@@ -74,7 +74,7 @@ import {
               </Text>
             </Heading>
             <Text color={'black'}>
-                    Desde a adolescência me dedico para a área de tecnologia, sou formado em Sistemas de Informação pela Universidade Federal de Mato Grosso do Sul (UFMS), Fiz estágios e já desenvolvi diversos projetos Freelancers. Meu foco atual é nos Frameworks
+                    Desde a adolescência me dedico à área de tecnologia, sou formado em Sistemas de Informação pela Universidade Federal de Mato Grosso do Sul (UFMS). Fiz estágios e já desenvolvi diversos projetos Freelancers. Meu foco atual é nos Frameworks
                     do Javascript como o React, React Native para o Front-End e Node, Express para o Back-End.
                 </Text>
                 <Text>Curiosidade: Esse site foi Desenvolvido com <b>Next.Js</b> e <b>React.Js</b></Text>
