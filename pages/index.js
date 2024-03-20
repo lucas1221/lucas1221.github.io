@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -10,6 +10,7 @@ import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
+import Typing from 'react-typing-animation';
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -40,13 +41,37 @@ export default function Home() {
     });
   };
 
+
   useIsomorphicLayoutEffect(() => {
+    // Animação para o cabeçalho
     stagger(
       [textOne.current, textTwo.current, textThree.current, textFour.current],
       { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
       { y: 0, x: 0, transform: "scale(1)" }
     );
+  
+    // Animação para a seção de trabalho
+    stagger(
+      [workRef.current],
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1 }
+    );
+  
+    // Animação para a seção sobre
+    stagger(
+      [aboutRef.current],
+      { y: -50, opacity: 0 },
+      { y: 0, opacity: 1 }
+    );
   }, []);
+  
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  useEffect(() => {
+    setStartAnimation(true);
+  }, []);
+  
+  const roles = ['Full-Stack', 'Mobile', 'Front-end', 'Back-End'];
 
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
@@ -78,16 +103,30 @@ export default function Home() {
               {data.headerTaglineTwo}
             </h1>
             <h1
-              ref={textThree}
+              
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 text-red-400"
             >
-              {data.headerTaglineThree}
-            </h1>
-            <h1
-              ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 text-red-400"
-            >
-              {data.headerTaglineFour}
+             {startAnimation && (
+              
+          <Typing loop speed={50}>
+            <Typing.Backspace count={30} />
+            <span>Desenvolvedor Full-Stack</span>
+            <Typing.Delay ms={50} />
+            <Typing.Backspace count={30} />
+            <Typing.Delay ms={50} />
+            <span>Desenvolvedor Mobile</span>
+            <Typing.Delay ms={50} />
+            <Typing.Backspace count={30} />
+            <Typing.Delay ms={50} />
+            <span>Desenvolvedor Front-End</span>
+            <Typing.Delay ms={50} />
+            <Typing.Backspace count={30} />
+            <Typing.Delay ms={50} />
+            <span>Desenvolvedor Back-End</span>
+            <Typing.Delay ms={50} />
+            <Typing.Backspace count={30} />
+          </Typing>
+        )}
             </h1>
           </div>
 
@@ -131,7 +170,7 @@ export default function Home() {
         )}
         
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0 w-full" ref={aboutRef}>
-        <h1 className="tablet:m-10 text-6xl text-bold text-center"><span className="highlight3">Sobre Mim</span></h1>
+         <h1 className="tablet:m-10 text-6xl text-bold text-center"><span className="highlight3">Sobre Mim</span></h1>
           {data.aboutpara.split('\n').map((para, index) => (
             <p key={index} className="tablet:m-10 mt-2 text-xl laptop:text-3xl">
               {para.split(' ').map((word, i) => {
