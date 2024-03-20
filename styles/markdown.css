@@ -3,36 +3,36 @@
 /* Markdown Container */
 
 .markdown-class {
-  @apply mt-5 p-5;
+  @apply mt-5 p-8;
 }
 
 /* Headings */
 
 .markdown-class h1 {
-  @apply mt-5 text-3xl;
+  @apply mt-5 text-4xl; /* Aumente o tamanho da fonte para um visual mais moderno */
 }
 .markdown-class h2 {
-  @apply mt-5 text-2xl;
+  @apply mt-5 text-3xl;
 }
 .markdown-class h3 {
-  @apply mt-5 text-xl;
+  @apply mt-5 text-2xl;
 }
 .markdown-class h4 {
-  @apply mt-5 text-lg;
+  @apply mt-5 text-xl;
 }
 .markdown-class h5 {
-  @apply mt-5 text-base;
+  @apply mt-5 text-lg;
 }
 .markdown-class h6 {
-  @apply mt-5 text-sm;
+  @apply mt-5 text-base;
 }
 
 .markdown-class a {
-  @apply opacity-80 font-bold text-base underline transition-all duration-200 ease-out hover:opacity-100;
+  @apply opacity-80 font-bold text-lg underline transition-all duration-200 ease-out hover:opacity-100; /* Aumente o tamanho da fonte para melhor legibilidade */
 }
 
 .markdown-class p {
-  @apply mt-2 opacity-80 leading-7 font-normal text-base;
+  @apply mt-2 opacity-80 leading-7 font-normal text-lg; /* Aumente o tamanho da fonte para melhor legibilidade */
 }
 
 .markdown-class strong {
@@ -43,8 +43,6 @@
   @apply my-5;
 }
 
-
-
 /* Markdown Lists */
 
 .markdown-class ol {
@@ -52,7 +50,7 @@
 }
 
 .markdown-class ol li {
-  @apply text-base opacity-80 list-decimal;
+  @apply text-lg opacity-80 list-decimal; /* Aumente o tamanho da fonte para melhor legibilidade */
 }
 
 .markdown-class ul {
@@ -60,23 +58,22 @@
 }
 
 .markdown-class ul li {
-  @apply text-base opacity-80 list-disc;
+  @apply text-lg opacity-80 list-disc; /* Aumente o tamanho da fonte para melhor legibilidade */
 }
 
 /* BlockQuote */
 
 .markdown-class blockquote {
-  @apply p-5 border-l-8 rounded-lg shadow-lg  text-sm bg-slate-200 text-black;
+  @apply p-5 border-l-8 rounded-lg shadow-lg  text-base bg-slate-200 text-black; /* Aumente o tamanho da fonte para melhor legibilidade */
 }
 
 .markdown-class blockquote p {
-  @apply text-black text-sm;
+  @apply text-black text-base; /* Aumente o tamanho da fonte para melhor legibilidade */
 }
-
-
 
 /* Image */
 
 .markdown-class img {
   @apply max-h-96 w-full my-5 object-cover rounded-lg shadow-lg;
 }
+

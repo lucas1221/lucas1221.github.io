@@ -73,19 +73,19 @@ export default function Home() {
             </h1>
             <h1
               ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 highlight"
             >
               {data.headerTaglineTwo}
             </h1>
             <h1
               ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 text-red-400"
             >
               {data.headerTaglineThree}
             </h1>
             <h1
               ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 text-red-400"
             >
               {data.headerTaglineFour}
             </h1>
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Habilidades e Conhecimentos</h1>
+          <h1 className="tablet:m-10 text-5xl text-bold"><span className="highlight3">Habilidades e Conhecimentos</span></h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -129,12 +129,26 @@ export default function Home() {
             </Link>
           </div>
         )}
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">Sobre Mim</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
+        
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0 w-full" ref={aboutRef}>
+        <h1 className="tablet:m-10 text-6xl text-bold text-center"><span className="highlight3">Sobre Mim</span></h1>
+          {data.aboutpara.split('\n').map((para, index) => (
+            <p key={index} className="tablet:m-10 mt-2 text-xl laptop:text-3xl">
+              {para.split(' ').map((word, i) => {
+                const cleanWord = word.replace(/[^a-zA-Z0-9]/g, '');
+                if (['Flutter', 'Node', 'Vue', 'React', 'Native', 'Java', 'Python', 'PostgreSQL', 'NestJS', 'ElementUI', 'TypeORM', 'Vue3', 'Azure', 'DevOps', 'Git', 'Scrum', 'Superset', 'Orchest', 'WordPress', 'FlaskApp', 'Machine', 'Learning', 'NoSQL'].includes(cleanWord)) {
+                  return <span key={i} className="bg-yellow-500 rounded underline">{word}</span>;
+                } else {
+                  return word;
+                }
+              }).reduce((prev, curr, i) => {
+                return [...prev, i > 0 && ' ', curr];
+              }, [])}
+            </p>
+          ))}
         </div>
+
+
         <Footer />
       </div>
     </div>
