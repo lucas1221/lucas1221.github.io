@@ -108,22 +108,22 @@ export default function Home() {
             >
              {startAnimation && (
               
-          <Typing loop speed={50}>
+          <Typing loop speed={100}>
             <Typing.Backspace count={30} />
             <span>Desenvolvedor Full-Stack</span>
             <Typing.Delay ms={50} />
             <Typing.Backspace count={30} />
-            <Typing.Delay ms={50} />
+            <Typing.Delay ms={80} />
             <span>Desenvolvedor Mobile</span>
-            <Typing.Delay ms={50} />
+            <Typing.Delay ms={80} />
             <Typing.Backspace count={30} />
-            <Typing.Delay ms={50} />
+            <Typing.Delay ms={80} />
             <span>Desenvolvedor Front-End</span>
-            <Typing.Delay ms={50} />
+            <Typing.Delay ms={80} />
             <Typing.Backspace count={30} />
-            <Typing.Delay ms={50} />
+            <Typing.Delay ms={80} />
             <span>Desenvolvedor Back-End</span>
-            <Typing.Delay ms={50} />
+            <Typing.Delay ms={80} />
             <Typing.Backspace count={30} />
           </Typing>
         )}
